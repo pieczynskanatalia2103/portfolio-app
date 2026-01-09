@@ -1,12 +1,15 @@
 import './App.css';
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import Header from './components/Header';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import ProjectDetail from './components/ProjectDetail';
 
-function App() {
+function Main() {
   return (
     <div className="app">
       <Header />
@@ -15,6 +18,17 @@ function App() {
       <Projects />
       <Contact />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/project/:id" element={<ProjectDetail />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

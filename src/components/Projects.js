@@ -1,24 +1,45 @@
+import { useNavigate } from 'react-router-dom';
+
 function Projects() {
+  const navigate = useNavigate();
+
+  const projects = [
+    {
+      id: 1,
+      title: 'Testy manualne aplikacji- Projekt własny portfolio',
+      description:
+        'Testy manualne aplikacji webowej. Tworzenie przypadków testowych, zgłaszanie błędów, testy regresji.',
+    },
+    {
+      id: 2,
+      title: 'Testy funkcjonalne strony internetowej- projekt własny',
+      description:
+        'Tworzenie przypadków testowych, zgłaszanie błędów, testy regresji.',
+    },
+  ];
+
   return (
     <section className="section">
       <h2>Projekty testerskie</h2>
 
-      <div className="project">
-        <h3>Testy manualne aplikacji- Projekt własny portfolio</h3>
-        <p>
-          Testy manualne aplikacji webowej. Tworzenie przypadków testowych,
-          zgłaszanie błędów, testy regresji.
-        </p>
-      </div>
-
-      <div className="project">
-        <h3>Testy funkcjonalne strony internetowej- projekt własny</h3>
-        <p> 
-          Tworzenie przypadków testowych,
-          zgłaszanie błędów, testy regresji.
-        </p>
-      </div>
+      {projects.map((p) => (
+        <div className="project" key={p.id}>
+          <h3>
+            <button
+              type="button"
+              onClick={() =>
+                navigate(`/project/${p.id}`, {
+                  state: { title: p.title, description: p.description },
+                })
+              }
+            >
+              {p.title}
+            </button>
+          </h3>
+        </div>
+      ))}
     </section>
   );
 }
+
 export default Projects;

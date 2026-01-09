@@ -27,11 +27,7 @@ function Projects() {
           <h3>
             <button
               type="button"
-              onClick={() =>
-                navigate(`/project/${p.id}`, {
-                  state: { title: p.title, description: p.description },
-                })
-              }
+              onClick={() => navigate(`/project/${p.id}`)}
             >
               {p.title}
             </button>

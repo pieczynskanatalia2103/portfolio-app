@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "title": "Testy manualne aplikacji- Projekt własny portfolio",
+    "description": "Testy manualne aplikacji webowej. Tworzenie przypadków testowych, zgłaszanie błędów, testy regresji."
+  },
+  {
+    "id": 2,
+    "title": "Testy funkcjonalne strony internetowej- projekt własny",
+    "description": "Tworzenie przypadków testowych, zgłaszanie błędów, testy regresji."
+  }
+]
